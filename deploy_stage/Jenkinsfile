@@ -23,7 +23,7 @@ pipeline {
             input {
               message 'wanna deploy to environement??'
               parameters {
-              choice choices: ['dev', 'preprod', 'prod'], description: 'Ok . you have choosen ${environment} to deploy app', name: 'environment'
+              choice choices: ['dev', 'preprod', 'prod'], description: 'Ok . please choose one enviorment of given 3 to deploy app', name: 'environment'
              }
           }
 
