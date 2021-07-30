@@ -33,10 +33,14 @@ pipeline {
             
         }
 }
-    post {
-  always {
-    echo "This always runs"
+   post {
+  success {
+      echo "${BUILD_NUMBER} is success"
+  }
+  failure {
+    echo "${BUILD_NUMBER} is failed"
   }
 }
+
 
 }
