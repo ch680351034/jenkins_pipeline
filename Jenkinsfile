@@ -16,7 +16,7 @@ pipeline {
             
             stage('Test'){
                 steps {
-                    echo "yes!! can see ${RELEASE} but cant see ${LOG_LEVEL}"
+                    echo "yes!! can see ${RELEASE} but cant access log_level param"
                 }
             
             
