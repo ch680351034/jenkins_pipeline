@@ -17,9 +17,20 @@ pipeline {
             stage('Test'){
                 steps {
                     echo "yes!! can see ${RELEASE} but cant access log_level param"
-                }
-            
-            
+                }    
     }
+        stage('Deploy'){
+            input {
+              message 'wanna deploy to environement??'
+              parameters {
+              choice choices: ['dev', 'preprod', 'prod'], description: 'Ok . you have choosen ${environment} to deploy app', name: 'environment'
+             }
+          }
+
+            steps {
+                echo "${RELEASE} is deployed to ${environment}
+            }
+            
+        }
 }
 }
