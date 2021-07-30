@@ -14,20 +14,20 @@ pipeline {
             }
         }
             
-            stage('Test'){
+            
                     parallel {
-                        stage('Linux') {
+                        stage('Test on Linux') {
                             steps {
                                 echo "Tests are executing tests on ${STAGE_NAME}"
                             }
                         }
-                        stage('windows') {
+                        stage('Test on windows') {
                             steps {
                                 echo "Tests are executing tests on ${STAGE_NAME}"
                             }
                         }
                     }
-}    
+    
     
         stage('Deploy'){
             input {
