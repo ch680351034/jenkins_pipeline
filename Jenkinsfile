@@ -1,11 +1,24 @@
 pipeline {
     agent any
-
+    environment {
+        RELEASE='20.04'
+    }
     stages {
-        stage('Hello') {
+        stage('Build') {
+            agent any
+            environment {
+                LOG_LEVEL='INFO'
+            }
             steps {
-                echo "Hello World!!! this is ${BUILD_NUMBER}th build"
+                echo "Hello World!!! This is the ${RELEASE} and its log level is ${LOG_LEVEL}"
             }
         }
+            
+            stage('Test'){
+                steps {
+                    echo "yes!! can see ${RELEASE} but cant see ${LOG_LEVEL}
+                }
+            
+            
     }
 }
