@@ -15,9 +15,19 @@ pipeline {
         }
             
             stage('Test'){
-                steps {
-                    echo "yes!! can see ${RELEASE} but cant access log_level param"
-                }    
+                    parallel {
+                        stage('Linux') {
+                            steps {
+                                echo "Tests are executing tests on ${STAGE_NAME}"
+                            }
+                        }
+                        stage('windows') {
+                            steps {
+                                echo "Tests are executing tests on ${STAGE_NAME}"
+                            }
+                        }
+                    }
+}    
     }
         stage('Deploy'){
             input {
