@@ -35,7 +35,7 @@ pipeline {
 }
     post {
   always {
-    This always runs 
+    echo "This always runs"
   }
 }
 
