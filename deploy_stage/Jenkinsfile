@@ -15,9 +15,6 @@ pipeline {
         }
             
         stage('Testing'){
-			steps { 
-			echo " Both tests running parallel"
-			}
 			
                     parallel {
                         stage('Test on Linux') {
