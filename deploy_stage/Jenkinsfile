@@ -28,7 +28,7 @@ pipeline {
                         }
                     }
 }    
-    }
+    
         stage('Deploy'){
             input {
               message 'wanna deploy to environement??'
@@ -42,7 +42,8 @@ pipeline {
             }
             
         }
-}
+	}
+
    post {
   success {
       echo "${BUILD_NUMBER} is success"
