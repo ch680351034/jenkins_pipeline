@@ -28,7 +28,7 @@ pipeline {
           }
 
             steps {
-                echo "${RELEASE} is deployed to ${environment}
+                echo "${RELEASE} is deployed to ${environment}"
             }
             
         }
